@@ -3,7 +3,11 @@
 /* global pendingTxDrawing:true */
 /* exported record_company, autoCloseNoticePanel, start_up, block_ui_delay*/
 var ws = {};
+<<<<<<< HEAD
 var bgcolors = ['whitebg', 'whitebg', 'whitebg', 'whitebg', 'whitebg', 'purplebg', 'pinkbg', 'orangebg', 'yellowbg'];
+=======
+var bgcolors = ['iphone', 'apple', 'redbg', 'greenbg', 'bluebg', 'purplebg', 'pinkbg', 'orangebg', 'yellowbg'];
+>>>>>>> dd6342ebabdaa0d699ab232abf8971a57cbac3f8
 var autoCloseNoticePanel = null;
 var known_companies = {};
 var start_up = true;
