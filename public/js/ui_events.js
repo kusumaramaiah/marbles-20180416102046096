@@ -72,6 +72,7 @@ $(document).on('ready', function () {
 	});
 	$(document).on('click', '.colorOption', function () {
 		var color = $(this).attr('color');
+		var model = $(this).attr('id');
 		var html = '<span class="fa fa-circle colorSelected ' + color + '" color="' + color + '"></span>';
 
 		$(this).parent().parent().find('.colorValue').html(html);
