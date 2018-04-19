@@ -39,6 +39,8 @@ $(document).on('ready', function () {
 			owner_id: $('input[name="owner_id"]').val(),
 			v: 1
 		};
+		alert($('this').find('.colorSelected').attr('id'));
+		alert($('this').val());
 		console.log('creating marble, sending', obj);
 		$('#createPanel').fadeOut();
 		$('#tint').fadeOut();
@@ -73,6 +75,7 @@ $(document).on('ready', function () {
 	$(document).on('click', '.colorOption', function () {
 		var color = $(this).attr('color');
 		var model = $(this).attr('id');
+		console.log('Attribute is displayed',model);
 		var html = '<span class="fa fa-circle colorSelected ' + color + '" color="' + color + '"></span>';
 
 		$(this).parent().parent().find('.colorValue').html(html);
