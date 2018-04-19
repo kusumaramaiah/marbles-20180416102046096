@@ -4,6 +4,7 @@
 /* exported record_company, autoCloseNoticePanel, start_up, block_ui_delay*/
 var ws = {};
 var bgcolors = ['whitebg', 'blackbg', 'redbg', 'greenbg', 'bluebg', 'purplebg', 'pinkbg', 'orangebg', 'yellowbg'];
+var prp = [];
 var autoCloseNoticePanel = null;
 var known_companies = {};
 var start_up = true;
@@ -35,7 +36,8 @@ $(document).on('ready', function () {
 			username: $('select[name="user"]').val(),
 			company: $('input[name="company"]').val(),
 			owner_id: $('input[name="owner_id"]').val(),
-			v: 1
+			v: 1,
+			model: $('.colorSelected').attr('id')
 		};
 		console.log('creating marble, sending', obj);
 		$('#createPanel').fadeOut();

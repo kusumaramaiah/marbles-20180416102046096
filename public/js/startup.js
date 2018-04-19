@@ -20,10 +20,10 @@ $(document).on('ready', function () {
 		build_marble_owners();
 	});
 
-	$('#showStartupPanel').click(function () {
-		$('#tint').fadeIn();
-		$('#startUpPanel').show().addClass('bounceInLeft');
-	});
+	// $('#showStartupPanel').click(function () {
+	// 	$('#tint').fadeIn();
+	// 	$('#startUpPanel').show().addClass('bounceInLeft');
+	// });
 
 	// ----------------------------- Actions-------------------------------------
 	//enroll admin
