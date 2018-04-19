@@ -32,12 +32,12 @@ $(document).on('ready', function () {
 		var obj = {
 			type: 'create',
 			color: $('.colorSelected').attr('color'),
+			model: $('.colorSelected').attr('id'),
 			size: $('select[name="size"]').val(),
 			username: $('select[name="user"]').val(),
 			company: $('input[name="company"]').val(),
 			owner_id: $('input[name="owner_id"]').val(),
-			v: 1,
-			model: $('.colorSelected').attr('id')
+			v: 1
 		};
 		console.log('creating marble, sending', obj);
 		$('#createPanel').fadeOut();
