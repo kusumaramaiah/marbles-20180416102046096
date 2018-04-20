@@ -75,6 +75,7 @@ $(document).on('ready', function () {
 	$(document).on('click', '.colorOption', function () {
 		var color = $(this).attr('color');
 		var model = $(this).attr('id');
+		alert($(this).val());
 		console.log('Attribute is displayed',model);
 		var html = '<span class="fa fa-circle colorSelected ' + color + '" color="' + color + '"></span>';
 
