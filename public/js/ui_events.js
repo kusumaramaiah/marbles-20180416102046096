@@ -79,7 +79,7 @@ $(document).on('ready', function () {
 		$(this).parent().parent().find('.colorValue').html(html);
 		$(this).parent().hide();
 
-		for (var i in bgcolors) $('.createball').removeClass(bgcolors[i]).removeClaa(handsetlist[i]);		//remove prev color
+		for (var i in bgcolors) $('.createball').removeClass(bgcolors[i]).removeClass(handsetlist[i]);		//remove prev color
 		$('.createball').css('border', '0').addClass(color + 'bg').addClass(model);				//set new color
 	});
 
