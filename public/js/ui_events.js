@@ -79,7 +79,7 @@ $(document).on('ready', function () {
 		$(this).parent().hide();
 
 		for (var i in bgcolors) $('.createball').removeClass(bgcolors[i]);		//remove prev color
-		$('.createball').css('border', '0').addClass(color + 'bg').html(model);				//set new color
+		$('.createball').css('border', '0').css('color', '#54e2d6').css('background', color).html(model);				//set new color
 	});
 
 	//username/company search
