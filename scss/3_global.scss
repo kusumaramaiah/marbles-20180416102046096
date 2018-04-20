@@ -390,7 +390,7 @@ $auditSize: 333px;
 .orange{color:#ED8F30;}
 .yellow{color:#DAC94E;}
 
-.whitebg{background:url(../public/imgs/iPhoneX.png) no-repeat;}
+.whitebg{background:#FFFEF3;}
 .blackbg{background:#1C2026}
 .redbg{background:#F15847}
 .greenbg{background:#68B369}
@@ -400,6 +400,10 @@ $auditSize: 333px;
 .orangebg{background:#ED8F30}
 .yellowbg{background:#DAC94E}
 
+
+//Handset text
+.iPhoneX{content: "iPhoneX"}
+.iPhone8{content: "iPhone8"}
 
 .colorSelectWrap{
 	text-align: left;

@@ -4,6 +4,7 @@
 /* exported record_company, autoCloseNoticePanel, start_up, block_ui_delay*/
 var ws = {};
 var bgcolors = ['whitebg', 'blackbg', 'redbg', 'greenbg', 'bluebg', 'purplebg', 'pinkbg', 'orangebg', 'yellowbg'];
+var handsetlist = ['iPhoneX','iphone8','iPhone8+','iPhone7','iPhone7+','iPhone6','iPhone6+'];
 var prp = [];
 var autoCloseNoticePanel = null;
 var known_companies = {};
@@ -78,8 +79,8 @@ $(document).on('ready', function () {
 		$(this).parent().parent().find('.colorValue').html(html);
 		$(this).parent().hide();
 
-		for (var i in bgcolors) $('.createball').removeClass(bgcolors[i]);		//remove prev color
-		$('.createball').css('border', '0').addClass(color + 'bg');				//set new color
+		for (var i in bgcolors) $('.createball').removeClass(bgcolors[i]).removeClaa(handsetlist[i]);		//remove prev color
+		$('.createball').css('border', '0').addClass(color + 'bg').addClass(model);				//set new color
 	});
 
 	//username/company search
