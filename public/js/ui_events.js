@@ -49,7 +49,8 @@ $(document).on('ready', function () {
 			ws.send(JSON.stringify(obj));
 
 			refreshHomePanel();
-			$('.colorValue').html('Color');											//reset
+			var html = '<span class="colorValue" color="' + color + '" id="' + model + '">'+ model +'</span>';
+			$('.colorValue').html(html);											//reset
 			for (var i in bgcolors) $('.createball').removeClass(bgcolors[i]);		//reset
 			$('.createball').css('border', '2px dashed #fff');						//reset
 		});
@@ -75,9 +76,7 @@ $(document).on('ready', function () {
 	$(document).on('click', '.colorOption', function () {
 		var color = $(this).attr('color');
 		var model = $(this).attr('id');
-		alert($(this).val());
-		console.log('Attribute is displayed',model);
-		var html = '<span class="fa fa-circle colorSelected ' + color + '" color="' + color + '"></span>';
+		var html = '<span class="fa fa-circle colorSelected ' + color + '" color="' + color + '" id="' + model + '"></span>';
 
 		$(this).parent().parent().find('.colorValue').html(html);
 		$(this).parent().hide();
