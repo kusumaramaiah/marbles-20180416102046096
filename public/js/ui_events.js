@@ -39,8 +39,6 @@ $(document).on('ready', function () {
 			owner_id: $('input[name="owner_id"]').val(),
 			v: 1
 		};
-		alert($('this').find('.colorSelected').attr('id'));
-		alert($('this').val());
 		console.log('creating marble, sending', obj);
 		$('#createPanel').fadeOut();
 		$('#tint').fadeOut();
@@ -49,8 +47,7 @@ $(document).on('ready', function () {
 			ws.send(JSON.stringify(obj));
 
 			refreshHomePanel();
-			var html = '<span class="colorValue" color="' + color + '" id="' + model + '">'+ model +'</span>';
-			$('.colorValue').html(html);											//reset
+			$('.colorValue').html('color');											//reset
 			for (var i in bgcolors) $('.createball').removeClass(bgcolors[i]);		//reset
 			$('.createball').css('border', '2px dashed #fff');						//reset
 		});
@@ -82,7 +79,7 @@ $(document).on('ready', function () {
 		$(this).parent().hide();
 
 		for (var i in bgcolors) $('.createball').removeClass(bgcolors[i]);		//remove prev color
-		$('.createball').css('border', '0').addClass(color + 'bg');				//set new color
+		$('.createball').css('border', '0').addClass(color + 'bg').html(model);				//set new color
 	});
 
 	//username/company search
