@@ -4,6 +4,7 @@
 /* exported record_company, autoCloseNoticePanel, start_up, block_ui_delay*/
 var ws = {};
 var bgcolors = ['whitebg', 'blackbg', 'redbg', 'greenbg', 'bluebg', 'purplebg', 'pinkbg', 'orangebg', 'yellowbg'];
+var handsetlist = ['iPhoneX','iphone8','iPhone8plus','iPhone7','iPhone7plus','iPhone6','iPhone6plus','iPhone6s','iPhone6splus'];
 var autoCloseNoticePanel = null;
 var known_companies = {};
 var start_up = true;
@@ -31,6 +32,7 @@ $(document).on('ready', function () {
 		var obj = {
 			type: 'create',
 			color: $('.colorSelected').attr('color'),
+			model: $('.colorSelected').attr('id'),
 			size: $('select[name="size"]').val(),
 			username: $('select[name="user"]').val(),
 			company: $('input[name="company"]').val(),
@@ -47,6 +49,7 @@ $(document).on('ready', function () {
 			refreshHomePanel();
 			$('.colorValue').html('Color');											//reset
 			for (var i in bgcolors) $('.createball').removeClass(bgcolors[i]);		//reset
+			for (var i in handsetlist) $('.createball').removeClass(handsetlist[i]);		//reset
 			$('.createball').css('border', '2px dashed #fff');						//reset
 		});
 
@@ -70,13 +73,15 @@ $(document).on('ready', function () {
 	});
 	$(document).on('click', '.colorOption', function () {
 		var color = $(this).attr('color');
+		var model = $(this).attr(id);
 		var html = '<span class="fa fa-circle colorSelected ' + color + '" color="' + color + '"></span>';
 
 		$(this).parent().parent().find('.colorValue').html(html);
 		$(this).parent().hide();
 
-		for (var i in bgcolors) $('.createball').removeClass(bgcolors[i]);		//remove prev color
-		$('.createball').css('border', '0').addClass(color + 'bg');				//set new color
+		for (var i in bgcolors) $('.createball').removeClass(bgcolors[i]);				//remove prev color
+		for (var i in handsetlist) $('.createball').removeClass(handsetlist[i]);		//remove prev text
+		$('.createball').css('border', '0').addClass(color + 'bg').addClass(model);					//set new color						//set new color
 	});
 
 	//username/company search
