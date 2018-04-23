@@ -39,7 +39,6 @@ $(document).on('ready', function () {
 			owner_id: $('input[name="owner_id"]').val(),
 			v: 1
 		};
-		alert('I have got the ID value',model);
 		console.log('creating marble, sending', obj);
 		$('#createPanel').fadeOut();
 		$('#tint').fadeOut();
