@@ -16,7 +16,7 @@ function build_marble(marble) {
 	var auditing = '';
 
 	marbles[marble.id] = marble;
-
+	console.log('Stringfy marbles : ',JSON.stringify(marble));
 	marble.id = escapeHtml(marble.id);
 	marble.color = escapeHtml(marble.color);
 	marble.owner.id = escapeHtml(marble.owner.id);
@@ -28,7 +28,6 @@ function build_marble(marble) {
 	console.log('[ui] building marble: ', marble.color, full_owner, marble.id.substring(0, 4), marble.model + '...');
 	if (marble.size == 16) size = 'smallMarble';
 	if (marble.color) colorClass = marble.color.toLowerCase() + 'bg';
-	if (marble.model) modelClass = marble.model.toLowerCase();
 
 	if (auditingMarble && marble.id === auditingMarble.id) auditing = 'auditingMarble';
 
