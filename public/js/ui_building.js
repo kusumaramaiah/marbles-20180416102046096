@@ -22,16 +22,18 @@ function build_marble(marble) {
 	marble.owner.id = escapeHtml(marble.owner.id);
 	marble.owner.username = escapeHtml(marble.owner.username);
 	marble.owner.company = escapeHtml(marble.owner.company);
+	marble.model = escapeHtml(marble.model);
 	var full_owner = escapeHtml(marble.owner.username.toLowerCase() + '.' + marble.owner.company);
 
-	console.log('[ui] building marble: ', marble.color, full_owner, marble.id.substring(0, 4) + '...');
+	console.log('[ui] building marble: ', marble.color, full_owner, marble.id.substring(0, 4), marble.model + '...');
 	if (marble.size == 16) size = 'smallMarble';
 	if (marble.color) colorClass = marble.color.toLowerCase() + 'bg';
+	if (marble.model) modelClass = marble.model.toLowerCase();
 
 	if (auditingMarble && marble.id === auditingMarble.id) auditing = 'auditingMarble';
 
 	html += '<span id="' + marble.id + '" class="ball ' + size + ' ' + colorClass + ' ' + auditing + ' title="' + marble.id + '"';
-	html += ' username="' + marble.owner.username + '" company="' + marble.owner.company + '" owner_id="' + marble.owner.id + '"></span>';
+	html += ' username="' + marble.owner.username + '" company="' + marble.owner.company + '" owner_id="' + marble.owner.id + '">'+ marble.model+'</span>';
 
 	$('.marblesWrap[owner_id="' + marble.owner.id + '"]').find('.innerMarbleWrap').prepend(html);
 	$('.marblesWrap[owner_id="' + marble.owner.id + '"]').find('.noMarblesMsg').hide();
@@ -196,10 +198,12 @@ function build_a_tx(data, pos) {
 	var username = '-';
 	var company = '-';
 	var id = '-';
+	var model = '-';
 	if (data && data.value && data.value.owner && data.value.owner.username) {
 		username = data.value.owner.username;
 		company = data.value.owner.company;
 		id = data.value.owner.id;
+		model = data.value.model;
 	}
 
 	html += `<div class="txDetails">
@@ -219,6 +223,10 @@ function build_a_tx(data, pos) {
 				<p>
 					<div class="marbleLegend">Ower Id: </div>
 					<div class="marbleName">` + id + `</div>
+				</p>
+				<p>
+					<div class="marbleLegend">Model: </div>
+					<div class="marbleName">` + model + `</div>
 				</p>
 			</div>`;
 	return html;
